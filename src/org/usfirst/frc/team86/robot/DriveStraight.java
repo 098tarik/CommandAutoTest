@@ -15,10 +15,16 @@ public class DriveStraight implements ICommand {
 	double distance = 0;
 	
 	
-	public DriveStraight(TalonSRX leftMotor, TalonSRX rightMotor, double distance){
+	public DriveStraight(TalonSRX leftMotor, TalonSRX rightMotor, TalonSRX leftBack, TalonSRX rightBack, double distance){
 		this.leftMotor = leftMotor;
 		this.rightMotor = rightMotor;
 		this.distance = distance;
+		
+		leftBack.set(ControlMode.Follower, leftMotor.getDeviceID());
+        rightBack.set(ControlMode.Follower, rightMotor.getDeviceID());
+    
+		leftMotor.set(ControlMode.PercentOutput,0);
+	    rightMotor.set(ControlMode.PercentOutput, 0);
 	}
 	
 	@Override

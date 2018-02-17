@@ -17,9 +17,6 @@ public class Auto {
 	char switchPosition = gameData.charAt(0);
 	char scalePosition  = gameData.charAt(1);
 	
-	
-	
-	
 	public Auto(int robotPosition, char switchPosition, char scalePosition) {
 		String mode = String.valueOf(robotPosition) + switchPosition + scalePosition;
 		
