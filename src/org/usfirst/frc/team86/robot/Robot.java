@@ -41,20 +41,12 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousInit() {
 		gyro.reset();
-		drive = new DriveStraight(IO.leftFront,IO.rightFront, 1);
+		drive = new DriveStraight(IO.leftFront,IO.rightFront,IO.leftBack,IO.rightBack, 1);
 		gyroturn = new TurnTo(IO.leftFront, IO.rightFront, IO.leftBack, IO.rightBack, 90);
 //	    tankgyro = new TankGyro(IO.leftFront, IO.leftBack, IO.rightFront, IO.rightBack);
 //	    tankgyro.turnToAngle(targetAngle);
 		
-		
-//		String gameData = DriverStation.getInstance().getGameSpecificMessage();
-//		double robotPosition = SmartDashboard.getNumber("RobotPosistion(0,1,2,3)", 0);
-//		
-//		int home  = gameData.charAt(0)=='L'?0:1; 
-//		int scale = gameData.charAt(1)=='L'?0:1;
-//		
-//		SmartDashboard.putNumber("home", home);
-//		SmartDashboard.putNumber("scale", scale);
+	
 	}
 
 	@Override
