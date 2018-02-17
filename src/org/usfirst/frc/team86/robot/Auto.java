@@ -11,13 +11,13 @@ public class Auto {
 
 	// 0- far left, 1- off left, 2- off right, 3- far right
 	
-	String gameData = DriverStation.getInstance().getGameSpecificMessage();
-	double robotPosition = SmartDashboard.getNumber("RobotPosistion(0,1,2,3)", 0);
+//	String gameData = DriverStation.getInstance().getGameSpecificMessage();
+//	double robotPosition = SmartDashboard.getNumber("RobotPosistion(0,1,2,3)", 0);
+//	
+//	char switchPosition = gameData.charAt(0);
+//	char scalePosition  = gameData.charAt(1);
 	
-	char switchPosition = gameData.charAt(0);
-	char scalePosition  = gameData.charAt(1);
-	
-	public Auto(int robotPosition, char switchPosition, char scalePosition) {
+	public Auto(double robotPosition, char switchPosition, char scalePosition) {
 		String mode = String.valueOf(robotPosition) + switchPosition + scalePosition;
 		
 		SmartDashboard.putNumber("switch", switchPosition);

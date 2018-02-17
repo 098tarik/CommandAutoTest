@@ -14,7 +14,7 @@ public class Robot extends IterativeRobot {
 	TankGyro tankgyro;
 	TurnTo gyroturn;
 	DriveStraight drive;
-	
+	Auto auto;
 	@Override
 	public void robotInit() {
 		
@@ -46,6 +46,14 @@ public class Robot extends IterativeRobot {
 //	    tankgyro = new TankGyro(IO.leftFront, IO.leftBack, IO.rightFront, IO.rightBack);
 //	    tankgyro.turnToAngle(targetAngle);
 		
+		String gameData = DriverStation.getInstance().getGameSpecificMessage();
+		double robotPosition = SmartDashboard.getNumber("RobotPosistion(0,1,2,3)", 0);
+		
+		char switchPosition = gameData.charAt(1);
+		char scalePosition  = gameData.charAt(2);
+		
+		auto = new Auto(robotPosition, scalePosition, scalePosition);
+
 	
 	}
 
